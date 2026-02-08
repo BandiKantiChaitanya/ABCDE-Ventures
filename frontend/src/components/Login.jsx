@@ -8,7 +8,8 @@ const Login = () => {
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault()
     setError('')
 
     if (!username || !password) {
@@ -38,37 +39,39 @@ const Login = () => {
         </div>
 
         <div className="form-container">
-          <div className="input-group">
-            <label>Username</label>
-            <input
-              type="text"
-              className="input-field"
-              value={username}
-              onChange={e => {
-                setUsername(e.target.value)
-                setError('')
-              }}
-            />
-          </div>
+          <form onSubmit={handleLogin}>
+            <div className="input-group">
+              <label>Username</label>
+              <input
+                type="text"
+                className="input-field"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value)
+                  setError('')
+                }}
+              />
+            </div>
 
-          <div className="input-group">
-            <label>Password</label>
-            <input
-              type="password"
-              className="input-field"
-              value={password}
-              onChange={e => {
-                setPassword(e.target.value)
-                setError('')
-              }}
-            />
-          </div>
+            <div className="input-group">
+              <label>Password</label>
+              <input
+                type="password"
+                className="input-field"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                  setError('')
+                }}
+              />
+            </div>
 
-          {error && <p className="text-danger">{error}</p>}
+            {error && <p className="text-danger">{error}</p>}
 
-          <button className="btn-primary" onClick={handleLogin}>
-            Login
-          </button>
+            <button type="submit" className="btn-primary">
+              Login
+            </button>
+          </form>
 
           <p className="text-link">
             New user? <Link to="/signup">Register here</Link>

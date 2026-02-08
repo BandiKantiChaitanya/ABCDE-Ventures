@@ -9,7 +9,8 @@ const Signup = () => {
   const [success, setSuccess] = useState('')
   const navigate = useNavigate()
 
-  const handleSignup = async () => {
+  const handleSignup = async (e) => {
+    e.preventDefault()
     setError('')
     setSuccess('')
 
@@ -42,38 +43,40 @@ const Signup = () => {
         </div>
 
         <div className="form-container">
-          <div className="input-group">
-            <label>Username</label>
-            <input
-              type="text"
-              className="input-field"
-              value={username}
-              onChange={e => {
-                setUsername(e.target.value)
-                setError('')
-              }}
-            />
-          </div>
+          <form onSubmit={handleSignup}>
+            <div className="input-group">
+              <label>Username</label>
+              <input
+                type="text"
+                className="input-field"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value)
+                  setError('')
+                }}
+              />
+            </div>
 
-          <div className="input-group">
-            <label>Password</label>
-            <input
-              type="password"
-              className="input-field"
-              value={password}
-              onChange={e => {
-                setPassword(e.target.value)
-                setError('')
-              }}
-            />
-          </div>
+            <div className="input-group">
+              <label>Password</label>
+              <input
+                type="password"
+                className="input-field"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                  setError('')
+                }}
+              />
+            </div>
 
-          {error && <p className="error-text text-danger">{error}</p>}
-          {success && <p className="success-text">{success}</p>}
+            {error && <p className="error-text text-danger">{error}</p>}
+            {success && <p className="success-text">{success}</p>}
 
-          <button className="btn-primary" onClick={handleSignup}>
-            Register
-          </button>
+            <button type="submit" className="btn-primary">
+              Register
+            </button>
+          </form>
 
           <p className="text-link">
             Already Registered? <Link to="/">Login here</Link>
