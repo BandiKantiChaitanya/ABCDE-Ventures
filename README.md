@@ -5,7 +5,7 @@ This is a **full-stack e-commerce web application** built using **React** for th
 ---
 ## Live Demo
 
-[Live demo](https://vercel.com/your-project-url)
+[Live demo](https://abcde-ventures.vercel.app/)
 
 
 ---
@@ -39,7 +39,7 @@ project/
 
 ## ⚙️ Features
 
-1. **User Management**
+### 1. **User Management**
 
 ![Login Screen](frontend/public/screenshots/login.png)
 
@@ -47,30 +47,30 @@ project/
    * Logout with token cleanup.
    * Single-device login enforcement.
 
-2. **Item Browser**
+### 2. **Item Browser**
 
-frontend/public/screenshots/Itemlist.png
+![List Screen](frontend/public/screenshots/ItemList.png)
 
    * Fetch and display items from MongoDB.
    * Loading spinner while fetching items.
    * Add items to cart with a button click.
 
-3. **Cart Modal**
+### 3.**Cart Modal**
 
-frontend/public/screenshots/cartModal.png
+![Cart Screen](/frontend/public/screenshots/cartModal.png)
    * Displays all items added to the cart.
    * Shows **item name, item ID, and quantity** for each item.
    * User can view cart anytime without page reload.
    * Enhances user experience compared to traditional alert boxes.
 
-4. **Orders Modal**
-frontend/public/screenshots/ordersModal.png
+### 4. **Orders Modal**
+![orders Screen](frontend/public/screenshots/ordersModal.png)
    * Displays all previously placed orders.
    * Each order shows its **Order ID** and the list of items in that order.
    * Each item in the order shows **name, ID, and quantity**.
    * Orders are shown separately; items are not grouped across different orders.
 
-5. **Checkout**
+### 5. **Checkout**
 
    * Converts current cart into an order.
    * Clears the cart after successful checkout.
@@ -93,12 +93,6 @@ frontend/public/screenshots/ordersModal.png
 * bcryptjs for password hashing
 * jsonwebtoken for JWT authentication
 * CORS middleware
-
-
-## 🎥 Video Demonstration
-
-* A full walkthrough video of the application demonstrating login, browsing items, cart functionality, checkout, and viewing orders.
-* Place your video link here: **[Insert Google Drive Link]**
 
 ---
 
