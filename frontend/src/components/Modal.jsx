@@ -40,9 +40,14 @@ const Modal = ({ title, items, onClose }) => {
                       {groupedOrderItems.length > 0 ? (
                         <ul className="list-group">
                           {groupedOrderItems.map(item => (
-                            <li key={item._id} className="list-group-item d-flex justify-content-between align-items-center">
-                              <span>{item.name}</span>
-                              <span className="badge bg-primary rounded-pill">x{item.count}</span>
+                           <li key={item._id} className="list-group-item d-flex justify-content-between align-items-center py-3">
+                            <div className="d-flex flex-column">
+                                <span className="fw-semibold">{item.name}</span>
+                                <small className="text-muted">ID: {item._id}</small>
+                            </div>
+                            <span className="badge bg-primary fs-6 px-3 py-2 rounded-pill">
+                                x{item.count}
+                            </span>
                             </li>
                           ))}
                         </ul>
@@ -60,9 +65,14 @@ const Modal = ({ title, items, onClose }) => {
               ) : (
                 <ul className="list-group">
                   {items.map(item => (
-                    <li key={item._id} className="list-group-item d-flex justify-content-between align-items-center">
-                      <span>{item.name}</span>
-                      <span className="badge bg-primary rounded-pill">x{item.count}</span>
+                     <li key={item._id} className="list-group-item d-flex justify-content-between align-items-center py-3">
+                        <div className="d-flex flex-column">
+                            <span className="fw-semibold">{item.name}</span>
+                            <small className="text-muted">ID: {item._id}</small>
+                        </div>
+                        <span className="badge bg-primary fs-6 px-3 py-2 rounded-pill">
+                            x{item.count}
+                        </span>
                     </li>
                   ))}
                 </ul>
